@@ -35,11 +35,11 @@ bool checkStrings(string a, string b) {
     }
 
     // Print the char arr to confirm everything looks good
-    for (int i = 0; i < 26; i++) {
-        cout << aArr[i] << ", " ;
-    }
+    // for (int i = 0; i < 26; i++) {
+    //     cout << aArr[i] << ", " ;
+    // }
 
-    cout << "\n";
+    // cout << "\n";
 
     return true;
 }
@@ -57,55 +57,20 @@ int asciiSum(string s) {
 vector<int> matchingStrings(vector<string> strings, vector<string> queries) {
     
     vector<int> res;
-    //['a','b','c']
-    vector<int> queryArr;
-    for (int i = 0 ; i < queries.size(); i++) {
-        int querySize = queries[i].length();
-        int queriesSum = 0;
-        for (int j = 0; j < querySize; j++) {
-            int val = static_cast<int>(queries[i][j]);
-            queriesSum = queriesSum + val;
-            // cout << queries[i][j] << "," << val << "\n";
-        }
-        queryArr.push_back(queriesSum);
-    }
-
-    for (int v : queryArr) {
-        cout << v << " ";
-    }
-
-    cout << "\n";
-    // Convert the Strings Arr
-    vector<int> stringsArr;
-    for (int i = 0; i < strings.size(); i++) {
-        int stringSize = strings[i].length();
-        int stringsSum = 0;
-        for (int j = 0; j< stringSize; j++) {
-            int val = static_cast<int>(strings[i][j]);
-            stringsSum = stringsSum + val;
-        }
-        stringsArr.push_back(stringsSum);
-    }
-
-    for (int v : stringsArr) {
-        cout << v << " ";
-    }
-
-    cout << "\n";
-
-    for (int i = 0; i < queryArr.size(); i++) {
-        // cout << queryArr[i] << "\n";
-        int sum = 0 ;
-        for (int j = 0; j < stringsArr.size(); j++) {
-            if (queryArr[i] == stringsArr[j]) {
-                sum++;
+    for (int i = 0; i < queries.size(); i++) {
+        string queryString = queries[i];
+        int count = 0;
+        for (int j = 0; j < strings.size(); j++) {
+            string stringsString = strings[j];
+            if (checkStrings(queryString,stringsString)) {
+                count++;
             }
         }
-        res.push_back(sum);
+        res.push_back(count);
     }
 
-    for (int v : res) {
-        cout << v << " ";
+    for (int k = 0; k < res.size(); k++) {
+        cout << res[k];
     }
 
     return res;
@@ -120,7 +85,10 @@ int main() {
     //matchingStrings(strings, queries);
     string a = "abc";
     string b = "abc";
-    cout << checkStrings(a, b);
+    // cout << checkStrings(a, b);
+
+
+    matchingStrings(strings, queries);
 
     return 0;
 }

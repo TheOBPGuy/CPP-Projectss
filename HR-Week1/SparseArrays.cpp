@@ -77,16 +77,35 @@ vector<int> matchingStrings(vector<string> strings, vector<string> queries) {
 }
 
 int main() {
-    // vector<string> strings = {"abc"};
-    vector<string> strings = {"abcde","sdaklfj","asdjf","na","basdn","sdaklfj","asdjf","na","asdjf","na","basdn",
-        "sdaklfj","asdjf"};
-    vector<string> queries = {"abcde","sdaklfj","asdjf","na","basdn"};
+    // vector<string> strings = {"aba", "baba", "aba", "xzxb"};
+    // vector<string> queries = {"aba","xzxb","ab"};
+
+    // vector<string> strings = {"abcde","sdaklfj","asdjf","na","basdn","sdaklfj","asdjf","na","asdjf","na","basdn",
+    //    "sdaklfj","asdjf"};
+    // vector<string> queries = {"abcde","sdaklfj","asdjf","na","basdn"};
 
     //matchingStrings(strings, queries);
     string a = "abc";
     string b = "abc";
     // cout << checkStrings(a, b);
-
+    
+    int sSize;
+    vector<string> strings;
+    cin >> sSize;
+    for (int i = 0; i < sSize; i++) {
+        string temp;
+        cin >> temp;
+        strings.push_back(temp);
+    }
+    
+    int qSize;
+    vector<string> queries;
+    cin >> qSize;
+    for (int i = 0; i < qSize; i++) {
+        string temp;
+        cin >> temp;
+        queries.push_back(temp);
+    }
 
     matchingStrings(strings, queries);
 

@@ -6,20 +6,22 @@ using namespace std;
 bool isPossible(vector<int> A, int num, int mid);
 int books(vector<int> A, int B);
 
-bool isPossible(vector<int> A, int num, int mid) {
-    int newSum = 1;
+bool isPossible(vector<int> A, int students, int mid) {
+    int newStudents = 1;
     int tempSum = 0;
     for (int i = 0 ; i< A.size(); i++) {
-        tempSum += A[i];
-        if (tempSum > mid) {
-            // If we are crossing the mid then we need to allocate to another student
-            newSum++;
-            tempSum = 0;
-            i--;
+        if (A[i] > mid) {
+            return false;
+        }
+        if (tempSum + A[i] > mid) {
+            newStudents++;
+            tempSum = A[i];
+        } else {
+            tempSum += A[i];
         }
     }
     // If we crossed over the 
-    if (newSum > num) {
+    if (newStudents > students) {
         return false;
     } else {
         return true;
@@ -27,6 +29,11 @@ bool isPossible(vector<int> A, int num, int mid) {
 }
 
 int books(vector<int> A, int B) {
+    // 0. First initial check
+    if (B > A.size()) {
+        return -1;
+    }
+    
     // 1. find the lowest possible and highest possible pages
     int lo = INT_MAX; int hi = 0;
     for (int i = 0 ; i < A.size(); i++) {
@@ -56,8 +63,8 @@ int books(vector<int> A, int B) {
 
 int main() {
     // vector<int> A = {12, 34, 67, 90};
-    vector<int> A = {73, 58, 30, 72, 44, 78, 23, 9};
-    int B = 5;
+    vector<int> A = {97, 26, 12, 67, 10, 33, 79, 49, 79, 21, 67, 72, 93, 36, 85, 45, 28, 91, 94, 57, 1, 53, 8, 44, 68, 90, 24};
+    int B = 26;
     cout << "\n";
     cout << books(A,B);
     return 0;

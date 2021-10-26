@@ -14,8 +14,8 @@ bool isPossible(vector<int> A, int painters, ll int mid, int time) {
     ll int cal = 0;
     
     for (int i = 0; i < A.size(); i++) {
-        cal = A[i]*time;
-        cout << cal << "," << mid << "," << tempPainters << "\n";
+        cal = (long long int)A[i]*time; 
+        cout << cal << "," << mid << "," << tempPainters << "," << A[i] << "," << time << "\n";
         if (cal > mid) { return false; }
 
         if ((tempSum + cal) > mid) {
@@ -44,7 +44,7 @@ int paint(int A, int B, vector<int> C) {
         smallest = max(smallest, (ll)C[i]);
         highest += C[i];
     }
-    smallest = (smallest*B)%mod; highest = (highest*B)%mod;
+    smallest = (smallest*B); highest = (highest*B);
 
     cout << smallest << "," << highest << "\n";
     long long int mid;
@@ -111,7 +111,7 @@ int paint(int A, int B, vector<int> C) {
 // }
 
 int main() {
-    vector<int> C = {100000, 100000}; int A = 1; int B = 100000;
+    vector<int> C = {1000000, 1000000}; int A = 1; int B = 1000000;
     cout << paint(A,B,C);
     return 0;
 }

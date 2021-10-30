@@ -18,11 +18,11 @@ double findMedianSortedArrays(vector<int> A, vector<int> B) {
         int cut1 = lo+(hi-lo)/2;
         int cut2 = ((n1+n2+1)/2) - cut1;
 
-        int left1 = cut1 == 0 ? INT_MIN : A[cut1-1];
-        int left2 = cut2 == 0 ? INT_MIN : B[cut2-1];
+        double left1 = cut1 == 0 ? INT_MIN : A[cut1-1];
+        double left2 = cut2 == 0 ? INT_MIN : B[cut2-1];
 
-        int right1 = cut1 == n1 ? INT_MAX : A[cut1];
-        int right2 = cut2 == n2 ? INT_MAX : B[cut2];
+        double right1 = cut1 == n1 ? INT_MAX : A[cut1];
+        double right2 = cut2 == n2 ? INT_MAX : B[cut2];
 
         if (left1 > right2) {
             hi = cut1-1;
@@ -36,7 +36,7 @@ double findMedianSortedArrays(vector<int> A, vector<int> B) {
 }
 
 int main() {
-    vector<int> A = {2,3}; vector<int> B = {1,4,5};
+    vector<int> A = {0,23}; vector<int> B = {};
     cout << findMedianSortedArrays(A,B);
     return 0;
 }

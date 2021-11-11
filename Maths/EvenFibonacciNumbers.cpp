@@ -4,7 +4,7 @@
 
 using namespace std;
 
-// Dynamic Programming Solution
+// Dynamic Programming Solution and Approach using Tabulation and Memoization
 long long int solve(long long int range) {
     long long int dp[range+2];
     dp[0] = 0;

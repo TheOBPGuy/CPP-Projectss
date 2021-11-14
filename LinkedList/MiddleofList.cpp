@@ -78,24 +78,48 @@ ListNode* mergeList(ListNode* left, ListNode* right) {
 
     // delete current;
     return head;
+}
+
+ListNode* sortList(ListNode* A) {
+    // Get a base condition
+    if (A == nullptr || A->next == nullptr) {
+        return A;
+    }
+    ListNode* middle = middleNode(A);
+    ListNode* left = sortList(A);
+    ListNode* right = sortList(middle);
+    
+    return mergeList(left, right);
+    // ListNode* left = sortList(A);
+    // ListNode* right = sortList(middle);
+    // return mergeList(left, right);
 
 }
 
 int main() {
-    ListNode* l1 = new ListNode(1);
-    l1->next = new ListNode(2);
-    l1->next->next = new ListNode(4);
+    // ListNode* l1 = new ListNode(1);
+    // l1->next = new ListNode(2);
+    // l1->next->next = new ListNode(4);
 
-    ListNode* l2 = new ListNode(1);
-    l2->next = new ListNode(3);
-    l2->next->next = new ListNode(4);
+    // ListNode* l2 = new ListNode(1);
+    // l2->next = new ListNode(3);
+    // l2->next->next = new ListNode(4);
 
-    printList(l1);
+    // printList(l1);
+    // cout << "\n";
+    // printList(l2);
+    // cout << "\n";
+    // ListNode* result = mergeList(l1,l2);
+    // printList(result);
+
+    ListNode* A = new ListNode(1);
+    A->next = new ListNode(5);
+    // A->next->next = new ListNode(4);
+    // A->next->next = new ListNode(3);
+
     cout << "\n";
-    printList(l2);
-    cout << "\n";
-    ListNode* result = mergeList(l1,l2);
-    printList(result);
+    ListNode* sorted = sortList(A);
+    // printList(sorted);
 
     return 0;
 }

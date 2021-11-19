@@ -38,6 +38,8 @@ string simplifyPath(string A) {
         } else {
             string s(1,A[i]);
             if (isalpha(A[i])) {
+                int idx = 0;
+                string temp = "";
                 while (true) {
                     
                 }
@@ -60,6 +62,6 @@ string simplifyPath(string A) {
 }
 
 int main() {
-    string A = ""
+    string A = "/home/";
     return 0;
 }

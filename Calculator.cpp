@@ -24,10 +24,12 @@ class Calculator {
 
 int main() {
     Calculator myCalc;
-    cout << myCalc.getSum(2,2) << "\n";
-    cout << myCalc.getDiff(2,2)<< "\n";
-    cout << myCalc.getMulti(2,2)<< "\n";
-    cout << myCalc.getDiv(2,2)<< "\n";
+
+    cout << "Sum of 2 + 3 is: " << myCalc.getSum(2,3);
+    // cout << myCalc.getSum(2,2) << "\n";
+    // cout << myCalc.getDiff(2,2)<< "\n";
+    // cout << myCalc.getMulti(2,2)<< "\n";
+    // cout << myCalc.getDiv(2,2)<< "\n";
 
     return 0;
 }

@@ -21,5 +21,6 @@ string strings_xor(string s, string t) {
 }
 
 int main() {
+    cout << "Hello";
     return 0;
 }

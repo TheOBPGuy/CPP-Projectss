@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Calculator {
+class Calculator  {
 
     public:
         int getSum(int a, int b) {

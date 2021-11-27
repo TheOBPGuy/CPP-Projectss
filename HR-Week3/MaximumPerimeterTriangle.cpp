@@ -32,7 +32,7 @@ vector<int> maximumPerimeterTriangle(vector<int> sticks) {
                 // res.push_back(arr[i]);
                 // res.push_back(arr[i+1]);
                 // res.push_back(arr[i+2]);
-                result[0] = arr[i];
+                result[0] = arr[i]; 
                 result[1] = arr[i+1];
                 result[2] = arr[i+2];
             }
